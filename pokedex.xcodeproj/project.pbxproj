@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C44BD342C334FAC0062D810 /* PokeApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44BD332C334FAC0062D810 /* PokeApiModel.swift */; };
 		0C4CBB492C332DA200C3553A /* pokedexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CBB482C332DA200C3553A /* pokedexApp.swift */; };
 		0C4CBB4B2C332DA200C3553A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CBB4A2C332DA200C3553A /* ContentView.swift */; };
 		0C4CBB4D2C332DA400C3553A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4CBB4C2C332DA400C3553A /* Assets.xcassets */; };
 		0C4CBB502C332DA400C3553A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4CBB4F2C332DA400C3553A /* Preview Assets.xcassets */; };
+		0C68FF752C333B720002BA25 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C68FF742C333B720002BA25 /* Http.swift */; };
+		0C8A032E2C336E4900795ADD /* PokeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A032D2C336E4900795ADD /* PokeApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C44BD332C334FAC0062D810 /* PokeApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApiModel.swift; sourceTree = "<group>"; };
 		0C4CBB452C332DA200C3553A /* pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4CBB482C332DA200C3553A /* pokedexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokedexApp.swift; sourceTree = "<group>"; };
 		0C4CBB4A2C332DA200C3553A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0C4CBB4C2C332DA400C3553A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4CBB4F2C332DA400C3553A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0C68FF742C333B720002BA25 /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
+		0C8A032D2C336E4900795ADD /* PokeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,9 @@
 		0C4CBB472C332DA200C3553A /* pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				0C68FF732C333B510002BA25 /* Model */,
+				0C4CBB5A2C3330B900C3553A /* Views */,
 				0C4CBB482C332DA200C3553A /* pokedexApp.swift */,
-				0C4CBB4A2C332DA200C3553A /* ContentView.swift */,
 				0C4CBB4C2C332DA400C3553A /* Assets.xcassets */,
 				0C4CBB4E2C332DA400C3553A /* Preview Content */,
 			);
@@ -65,6 +72,24 @@
 				0C4CBB4F2C332DA400C3553A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0C4CBB5A2C3330B900C3553A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C4CBB4A2C332DA200C3553A /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C68FF732C333B510002BA25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C68FF742C333B720002BA25 /* Http.swift */,
+				0C44BD332C334FAC0062D810 /* PokeApiModel.swift */,
+				0C8A032D2C336E4900795ADD /* PokeApiService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8A032E2C336E4900795ADD /* PokeApiService.swift in Sources */,
 				0C4CBB4B2C332DA200C3553A /* ContentView.swift in Sources */,
 				0C4CBB492C332DA200C3553A /* pokedexApp.swift in Sources */,
+				0C68FF752C333B720002BA25 /* Http.swift in Sources */,
+				0C44BD342C334FAC0062D810 /* PokeApiModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

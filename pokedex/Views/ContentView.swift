@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var pokeApiService: PokeApiService = PokeApiService()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            if pokeApiService.pokemonList.count > 10 {
+                Form {
+                    ForEach(pokeApiService.pokemonList, id: \.id){ pokemon in
+                        Text(pokemon.name)
+                    }
+                }
+            }else {
+                Text("loading...")
+                    .font(.title)
+                    .foregroundStyle(.red)
+            }
         }
-        .padding()
+        .onAppear {
+            print("onAppear")
+            pokeApiService.getPokemonList()
+        }
     }
 }
 
