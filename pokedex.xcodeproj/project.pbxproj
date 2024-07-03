@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1579182C34FD56004B6A8A /* pokemonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C1579172C34FD56004B6A8A /* pokemonData.json */; };
+		0C15791A2C34FD94004B6A8A /* ResourcesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1579192C34FD94004B6A8A /* ResourcesData.swift */; };
+		0C15791D2C3509D7004B6A8A /* PokemonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15791C2C3509D7004B6A8A /* PokemonRow.swift */; };
+		0C15791F2C350CC0004B6A8A /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15791E2C350CC0004B6A8A /* PokemonDetail.swift */; };
+		0C1579222C3510C5004B6A8A /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1579212C3510C5004B6A8A /* URLImage.swift */; };
 		0C44BD342C334FAC0062D810 /* PokeApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44BD332C334FAC0062D810 /* PokeApiModel.swift */; };
 		0C4CBB492C332DA200C3553A /* pokedexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CBB482C332DA200C3553A /* pokedexApp.swift */; };
 		0C4CBB4B2C332DA200C3553A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CBB4A2C332DA200C3553A /* ContentView.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1579172C34FD56004B6A8A /* pokemonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemonData.json; sourceTree = "<group>"; };
+		0C1579192C34FD94004B6A8A /* ResourcesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesData.swift; sourceTree = "<group>"; };
+		0C15791C2C3509D7004B6A8A /* PokemonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRow.swift; sourceTree = "<group>"; };
+		0C15791E2C350CC0004B6A8A /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
+		0C1579212C3510C5004B6A8A /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		0C44BD332C334FAC0062D810 /* PokeApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApiModel.swift; sourceTree = "<group>"; };
 		0C4CBB452C332DA200C3553A /* pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4CBB482C332DA200C3553A /* pokedexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokedexApp.swift; sourceTree = "<group>"; };
@@ -38,6 +48,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1579162C34FD26004B6A8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C1579172C34FD56004B6A8A /* pokemonData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C15791B2C35099A004B6A8A /* Pokemons */ = {
+			isa = PBXGroup;
+			children = (
+				0C15791C2C3509D7004B6A8A /* PokemonRow.swift */,
+				0C15791E2C350CC0004B6A8A /* PokemonDetail.swift */,
+			);
+			path = Pokemons;
+			sourceTree = "<group>";
+		};
+		0C1579202C35109A004B6A8A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C1579212C3510C5004B6A8A /* URLImage.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0C4CBB3C2C332DA200C3553A = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +92,8 @@
 		0C4CBB472C332DA200C3553A /* pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				0C1579202C35109A004B6A8A /* Helpers */,
+				0C1579162C34FD26004B6A8A /* Resources */,
 				0C68FF732C333B510002BA25 /* Model */,
 				0C4CBB5A2C3330B900C3553A /* Views */,
 				0C4CBB482C332DA200C3553A /* pokedexApp.swift */,
@@ -77,6 +114,7 @@
 		0C4CBB5A2C3330B900C3553A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C15791B2C35099A004B6A8A /* Pokemons */,
 				0C4CBB4A2C332DA200C3553A /* ContentView.swift */,
 			);
 			path = Views;
@@ -88,6 +126,7 @@
 				0C68FF742C333B720002BA25 /* Http.swift */,
 				0C44BD332C334FAC0062D810 /* PokeApiModel.swift */,
 				0C8A032D2C336E4900795ADD /* PokeApiService.swift */,
+				0C1579192C34FD94004B6A8A /* ResourcesData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1579182C34FD56004B6A8A /* pokemonData.json in Resources */,
 				0C4CBB502C332DA400C3553A /* Preview Assets.xcassets in Resources */,
 				0C4CBB4D2C332DA400C3553A /* Assets.xcassets in Resources */,
 			);
@@ -163,10 +203,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A032E2C336E4900795ADD /* PokeApiService.swift in Sources */,
+				0C1579222C3510C5004B6A8A /* URLImage.swift in Sources */,
 				0C4CBB4B2C332DA200C3553A /* ContentView.swift in Sources */,
+				0C15791F2C350CC0004B6A8A /* PokemonDetail.swift in Sources */,
 				0C4CBB492C332DA200C3553A /* pokedexApp.swift in Sources */,
 				0C68FF752C333B720002BA25 /* Http.swift in Sources */,
+				0C15791D2C3509D7004B6A8A /* PokemonRow.swift in Sources */,
 				0C44BD342C334FAC0062D810 /* PokeApiModel.swift in Sources */,
+				0C15791A2C34FD94004B6A8A /* ResourcesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +347,14 @@
 				DEVELOPMENT_TEAM = BR957994MU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Pokedex;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +362,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.poncegl.pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -332,11 +383,14 @@
 				DEVELOPMENT_TEAM = BR957994MU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Pokedex;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +398,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.poncegl.pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

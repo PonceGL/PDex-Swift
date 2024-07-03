@@ -11,7 +11,6 @@ import Foundation
 final class PokeApiService: ObservableObject {
     private let limit: Int = 20
     private let http: Http = Http()
-    
     @Published var pokemonList: [PokemonModel] = []
     
     func getPokemonList() {
@@ -29,6 +28,8 @@ final class PokeApiService: ObservableObject {
     
     func formatData(data: PokeApiModel){
         let pokemon = PokemonModel(id: data.id, name: data.name, types: data.types, image: data.sprites.other.officialArtwork.frontDefault)
+        print("pokemon: \(pokemon.name)")
+        print(pokemon)
         DispatchQueue.main.async {
             self.pokemonList.append(pokemon)
         }

@@ -7,19 +7,23 @@
 
 import Foundation
 
-struct PokemonModel {
-    let id: Int
-    let name: String
-    let types: [Types]
-    let image: String
+struct PokemonModel: Equatable, Codable, Identifiable {
+    static func == (lhs: PokemonModel, rhs: PokemonModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    var id: Int
+    var name: String
+    var types: [Types]
+    var image: String
 }
 
-struct CommonObject: Decodable {
+struct CommonObject: Codable {
     let name: String
     let url: String
 }
 
-struct PokeApiModel: Decodable {
+struct PokeApiModel: Codable {
     let abilities: [Ability]
     let baseExperience: Int
     let cries: Cries
@@ -90,7 +94,7 @@ struct PokeApiModel: Decodable {
     
 }
 
-struct Ability: Decodable {
+struct Ability: Codable {
     let ability: CommonObject
     let isHidden: Bool
     let slot: Int
@@ -110,12 +114,12 @@ struct Ability: Decodable {
     
 }
 
-struct Cries: Decodable {
+struct Cries: Codable {
     let latest: String
     let legacy: String
 }
 
-struct GameIndices: Decodable {
+struct GameIndices: Codable {
     let gameIndex: Int
     let version: CommonObject
     
@@ -131,7 +135,7 @@ struct GameIndices: Decodable {
 //    }
 }
 
-struct HeldItems: Decodable {
+struct HeldItems: Codable {
     let item: CommonObject
     let versionDetails: [VersionDetails]
     
@@ -147,12 +151,12 @@ struct HeldItems: Decodable {
 //    }
 }
 
-struct VersionDetails: Decodable {
+struct VersionDetails: Codable {
     let rarity: Int
     let version: CommonObject
 }
 
-struct Moves: Decodable {
+struct Moves: Codable {
     let move: CommonObject
     let versionGroupDetails: [VersionGroupDetails]
     
@@ -170,7 +174,7 @@ struct Moves: Decodable {
 
 }
 
-struct VersionGroupDetails: Decodable {
+struct VersionGroupDetails: Codable {
     let levelLearnedAt: Int
     let moveLearnMethod: CommonObject
     let versionGroup: CommonObject
@@ -190,7 +194,7 @@ struct VersionGroupDetails: Decodable {
 }
 
     
-struct Sprite: Decodable {
+struct Sprite: Codable {
     let backDefault: String?
     let backFemale: String?
     let backShiny: String?
@@ -231,7 +235,7 @@ struct Sprite: Decodable {
 //    }
 }
 
-struct SpriteOther: Decodable {
+struct SpriteOther: Codable {
     let dreamWorld: DreamWorld
     let officialArtwork: OfficialArtwork
     let home: SpriteHome
@@ -255,7 +259,7 @@ struct SpriteOther: Decodable {
     
 }
 
-struct DreamWorld: Decodable {
+struct DreamWorld: Codable {
     let frontDefault: String?
     let frontFemale: String?
     
@@ -271,7 +275,7 @@ struct DreamWorld: Decodable {
 //    }
 }
 
-struct OfficialArtwork: Decodable {
+struct OfficialArtwork: Codable {
     let frontDefault: String
     let frontShiny: String
     
@@ -287,7 +291,7 @@ struct OfficialArtwork: Decodable {
 //    }
 }
 
-struct SpriteHome: Decodable {
+struct SpriteHome: Codable {
     let frontDefault: String?
     let frontFemale: String?
     let frontShiny: String?
@@ -310,7 +314,7 @@ struct SpriteHome: Decodable {
     
 }
 
-struct SpriteShowdown: Decodable {
+struct SpriteShowdown: Codable {
     let backDefault: String?
     let backFemale: String?
     let backShiny: String?
@@ -344,7 +348,7 @@ struct SpriteShowdown: Decodable {
 //    }
 }
 
-struct Stats: Decodable {
+struct Stats: Codable {
     let baseStat: Int
     let effort: Int
     let stat: CommonObject
@@ -357,12 +361,18 @@ struct Stats: Decodable {
     
 }
 
-struct Types: Decodable {
+struct Types: Codable {
     let slot: Int
     let type: CommonObject
+
+    static func == (lhs: Types, rhs: Types) -> Bool {
+        let lhsID = "\(lhs.slot)-in-\(lhs.type.name)"
+        let rhsID = "\(rhs.slot)-in-\(rhs.type.name)"
+        return lhsID == rhsID
+    }
 }
     
-struct Versions: Decodable {
+struct Versions: Codable {
     let generationI: GenerationI
     let generationIi: GenerationIi
     let generationIii: GenerationIii
@@ -385,7 +395,7 @@ struct Versions: Decodable {
     
 }
 
-struct GenerationI: Decodable {
+struct GenerationI: Codable {
     let redBlue: RedBlue
     let yellow: RedBlue
 
@@ -395,13 +405,13 @@ struct GenerationI: Decodable {
     }
 }
 
-struct GenerationIi: Decodable {
+struct GenerationIi: Codable {
     let crystal: Crystal
     let gold: Gold
     let silver: Gold
 }
 
-struct GenerationIii: Decodable {
+struct GenerationIii: Codable {
     let emerald: OfficialArtwork
     let fireredLeafgreen: Gold
     let rubySapphire: Gold
@@ -413,7 +423,7 @@ struct GenerationIii: Decodable {
     }
 }
 
-struct GenerationIv: Decodable {
+struct GenerationIv: Codable {
     let diamondPearl: DiamontGoldPlatinum
     let heartgoldSoulsilver: DiamontGoldPlatinum
     let platinum: DiamontGoldPlatinum
@@ -425,7 +435,7 @@ struct GenerationIv: Decodable {
     }
 }
 
-struct GenerationV: Decodable {
+struct GenerationV: Codable {
     let blackWhite: DiamontGoldPlatinum
     
     // animated is mising
@@ -435,7 +445,7 @@ struct GenerationV: Decodable {
     }
 }
 
-struct RedBlue: Decodable {
+struct RedBlue: Codable {
     let backDefault: String
     let backGray: String
     let backTransparent: String
@@ -453,7 +463,7 @@ struct RedBlue: Decodable {
     }
 }
 
-struct Crystal: Decodable {
+struct Crystal: Codable {
     let backDefault: String
     let backShiny: String
     let backShinyTransparent: String
@@ -475,7 +485,7 @@ struct Crystal: Decodable {
     }
 }
 
-struct Gold: Decodable {
+struct Gold: Codable {
     let backDefault: String
     let backShiny: String
     let frontDefault: String
@@ -491,7 +501,7 @@ struct Gold: Decodable {
     }
 }
 
-struct DiamontGoldPlatinum: Decodable {
+struct DiamontGoldPlatinum: Codable {
     let backDefault: String?
     let backFemale: String?
     let backShiny: String?

@@ -11,21 +11,28 @@ struct ContentView: View {
     @StateObject var pokeApiService: PokeApiService = PokeApiService()
     
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
             if pokeApiService.pokemonList.count > 10 {
-                Form {
+                List {
                     ForEach(pokeApiService.pokemonList, id: \.id){ pokemon in
-                        Text(pokemon.name)
+                        NavigationLink{
+                            PokemonDetail(pokemon: pokemon)
+                        } label: {
+                            PokemonRow(pokemon: pokemon)
+                        }
                     }
                 }
+                .animation(.default, value: pokeApiService.pokemonList)
+                .navigationTitle("Pokemons")
             }else {
                 Text("loading...")
                     .font(.title)
                     .foregroundStyle(.red)
             }
+        } detail: {
+            Text("Select a Pokemon")
         }
         .onAppear {
-            print("onAppear")
             pokeApiService.getPokemonList()
         }
     }
